@@ -100,7 +100,7 @@ def render_image(page, out: str, width: int, height: int, scale: float) -> None:
         )
         # Chromium captures width*scale pixels; raising the DPI by the same
         # factor keeps the physical page size and packs in the extra pixels.
-        dpi = int(round(96 * scale))
+        dpi = round(96 * scale)
         layout = img2pdf.get_fixed_dpi_layout_fun((dpi, dpi))
         with open(out, "wb") as f:
             f.write(img2pdf.convert(shot, layout_fun=layout))
@@ -164,7 +164,8 @@ def html_to_pdf(
 def install_browser() -> int:
     """Download the headless Chromium build matching the installed Playwright."""
     return subprocess.run(
-        [sys.executable, "-m", "playwright", "install", "chromium-headless-shell"]
+        [sys.executable, "-m", "playwright", "install", "chromium-headless-shell"],
+        check=False,
     ).returncode
 
 
