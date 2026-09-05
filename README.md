@@ -17,11 +17,11 @@ html2pdf drives headless Chromium through [Playwright](https://playwright.dev) a
 ## Install
 
 ```
-uv tool install git+https://github.com/openwhale-labs/html2pdf
+uv tool install html2pdf-onepage
 html2pdf --install-browser
 ```
 
-`pipx install git+https://github.com/openwhale-labs/html2pdf` works the same way. The second command downloads the headless Chromium build matching the installed Playwright. Run it again after upgrading html2pdf if it reports that Chromium is missing.
+`pipx install html2pdf-onepage` works the same way; the package is [html2pdf-onepage on PyPI](https://pypi.org/project/html2pdf-onepage/) and the command is `html2pdf`. The second command downloads the headless Chromium build matching the installed Playwright. Run it again after upgrading html2pdf if it reports that Chromium is missing.
 
 ## Usage
 

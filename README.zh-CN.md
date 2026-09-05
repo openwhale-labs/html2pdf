@@ -17,11 +17,11 @@ html2pdf 通过 [Playwright](https://playwright.dev) 驱动无头 Chromium,用 C
 ## 安装
 
 ```
-uv tool install git+https://github.com/openwhale-labs/html2pdf
+uv tool install html2pdf-onepage
 html2pdf --install-browser
 ```
 
-用 `pipx install git+https://github.com/openwhale-labs/html2pdf` 也一样。第二条命令下载与已安装 Playwright 版本匹配的无头 Chromium。升级 html2pdf 之后如果提示缺少 Chromium,再跑一次。
+用 `pipx install html2pdf-onepage` 也一样;PyPI 上的包名是 [html2pdf-onepage](https://pypi.org/project/html2pdf-onepage/),命令名是 `html2pdf`。第二条命令下载与已安装 Playwright 版本匹配的无头 Chromium。升级 html2pdf 之后如果提示缺少 Chromium,再跑一次。
 
 ## 用法
 
