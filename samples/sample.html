@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>html2pdf sample</title>
+<style>
+  :root { --ink: #1b1b1b; --muted: #57606a; --line: #d0d7de; --accent: #1a5fb4; }
+  body { margin: 0; font: 16px/1.7 -apple-system, "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", sans-serif; color: var(--ink); background: #fff; }
+  .toolbar { position: fixed; top: 0; right: 0; padding: 8px 12px; background: #fff3cd; }
+  .page { max-width: 760px; margin: 0 auto; padding: 48px 32px 64px; }
+  h1 { font-size: 32px; margin: 0 0 4px; }
+  .lead { color: var(--muted); margin: 0 0 32px; }
+  h2 { font-size: 22px; margin: 40px 0 12px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+  th { background: #f0f0f3; }
+  .card { border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+  .tall { height: 900px; background: linear-gradient(#f6f8fa, #e2e6ea); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="toolbar">This bar is position:fixed and is hidden in the PDF</div>
+<main class="page">
+  <h1>单页连续 PDF 示例</h1>
+  <p class="lead">A page taller than any sheet of paper, exported as one continuous PDF page.</p>
+
+  <h2>为什么不是 A4</h2>
+  <p>浏览器的「另存为 PDF」一定按纸张切页,要么每页底部留白,要么内容被切成两半。这份文档的高度远超一张 A4,html2pdf 把它整个渲染成一页,页高等于内容高度,像网页一样连续。</p>
+
+  <h2>Table</h2>
+  <table>
+    <tr><th>Mode</th><th>Output</th><th>Text</th></tr>
+    <tr><td>default</td><td>one vector page</td><td>selectable</td></tr>
+    <tr><td>--image</td><td>one raster page</td><td>not selectable</td></tr>
+    <tr><td>--paged</td><td>document's own @page rules</td><td>selectable</td></tr>
+  </table>
+
+  <h2>Cards</h2>
+  <div class="card">一张卡片。跨页时不会被切开,因为根本没有页。</div>
+  <div class="card">Another card, with a <a href="https://github.com/openwhale-labs/html2pdf">link</a> that stays clickable in the PDF.</div>
+
+  <h2>A tall block</h2>
+  <div class="tall">900px tall: would straddle two A4 sheets</div>
+
+  <h2>End</h2>
+  <p>The page ends here, and so does the PDF: no blank band below.</p>
+</main>
+</body>
+</html>

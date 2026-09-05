@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>html2pdf slides sample</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  html, body { margin: 0; }
+  .slide { width: 1280px; height: 720px; box-sizing: border-box; padding: 80px 96px; page-break-after: always; break-after: page; font: 28px/1.5 -apple-system, "Helvetica Neue", "Noto Sans CJK SC", sans-serif; color: #1b1b1b; background: #fff; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .slide.dark { background: #1b1b1b; color: #fff; }
+  h1 { font-size: 56px; margin: 0 0 24px; }
+  h2 { font-size: 40px; margin: 0 0 16px; }
+  ul { margin: 0; padding-left: 1.2em; }
+</style>
+</head>
+<body>
+  <section class="slide">
+    <h1>html2pdf --paged</h1>
+    <p>Three slides, each an @page of 1280 × 720 px, exported as three PDF pages.</p>
+  </section>
+  <section class="slide dark">
+    <h2>What --paged keeps</h2>
+    <ul>
+      <li>the document's own @page size</li>
+      <li>explicit page breaks between sections</li>
+      <li>vector text and links</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2>第三页</h2>
+    <p>中文同样走矢量,文字可以选中。</p>
+  </section>
+</body>
+</html>
